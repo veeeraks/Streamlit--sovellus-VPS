@@ -1,9 +1,0 @@
-[Unit]
-After=network.target
-[Service]
-User=ubuntu
-WorkingDirectory=/home/ubuntu/myapp
-ExecStart=/home/ubuntu/myapp/venv/bin/streamlit run /home/ubuntu/myapp/myapp.py \ --server.address=0.0.0.0 --server.port=8501 \ --server.baseUrlPath=data-analysis
-Restart=always
-[Install]
-WantedBy=multi-user.target
