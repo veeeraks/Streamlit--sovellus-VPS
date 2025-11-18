@@ -1,0 +1,38 @@
+nohup: ignoring input
+
+Collecting usage statistics. To deactivate, set browser.gatherUsageStats to false.
+
+
+  You can now view your Streamlit app in your browser.
+
+  URL: http://127.0.0.1:8501/data-analysis
+
+2025-11-17 20:41:51.934 "connections.mysql" is not a valid config option. If you previously had this config option set, it may have been removed.
+2025-11-17 20:53:28.711 404 GET / (127.0.0.1) 1.09ms
+2025-11-17 20:56:35.413 "server.baserUrlPath" is not a valid config option. If you previously had this config option set, it may have been removed.
+2025-11-17 20:56:35.413 "connections.mysql" is not a valid config option. If you previously had this config option set, it may have been removed.
+2025-11-17 20:57:03.426 404 GET / (127.0.0.1) 0.69ms
+2025-11-17 20:57:55.031 "server.baserUrlPath" is not a valid config option. If you previously had this config option set, it may have been removed.
+2025-11-17 20:57:55.031 "connections.mysql" is not a valid config option. If you previously had this config option set, it may have been removed.
+2025-11-17 20:58:06.026 404 GET / (127.0.0.1) 0.57ms
+2025-11-17 21:02:29.312 200 GET /data-analysis/ (127.0.0.1) 1.29ms
+2025-11-17 21:05:18.483 404 HEAD / (127.0.0.1) 1.06ms
+2025-11-17 21:05:24.269 404 GET / (127.0.0.1) 0.45ms
+2025-11-17 21:05:55.398 404 GET / (127.0.0.1) 0.77ms
+2025-11-17 21:09:22.674 200 HEAD /data-analysis/ (127.0.0.1) 1.78ms
+2025-11-17 21:09:27.951 404 GET / (127.0.0.1) 0.46ms
+2025-11-17 21:10:40.445 404 GET / (127.0.0.1) 0.77ms
+2025-11-17 21:10:43.847 404 GET / (127.0.0.1) 0.53ms
+2025-11-17 21:12:49.196 200 HEAD /data-analysis/ (127.0.0.1) 0.79ms
+2025-11-17 21:12:54.636 404 GET / (127.0.0.1) 0.51ms
+2025-11-17 21:14:26.604 200 HEAD /data-analysis/ (127.0.0.1) 1.34ms
+2025-11-17 21:15:11.952 404 GET / (127.0.0.1) 0.45ms
+2025-11-17 21:18:08.453 200 HEAD /data-analysis/ (127.0.0.1) 0.71ms
+2025-11-17 21:18:16.316 404 GET / (127.0.0.1) 0.45ms
+2025-11-17 21:18:17.461 404 GET / (127.0.0.1) 0.50ms
+2025-11-17 21:22:17.452 404 GET / (127.0.0.1) 0.64ms
+2025-11-17 21:24:09.903 404 GET / (127.0.0.1) 0.38ms
+2025-11-17 21:24:33.303 404 GET / (127.0.0.1) 0.45ms
+2025-11-17 21:35:01.335 404 GET / (127.0.0.1) 0.78ms
+2025-11-17 21:35:09.128 404 GET / (127.0.0.1) 0.58ms
+2025-11-17 21:47:23.087 404 GET / (127.0.0.1) 0.86ms
