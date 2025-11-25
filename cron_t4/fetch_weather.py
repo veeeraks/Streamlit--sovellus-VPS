@@ -3,7 +3,7 @@ import requests
 import mysql.connector
 from datetime import datetime
 
-API_KEY = '7412de7f662148f3a11d659b90d49b9d'  # Vaihda oma API-avain
+API_KEY = ''  # Oma API-avain
 CITY = 'Tampere'
 URL = f'https://api.openweathermap.org/data/2.5/weather?q={CITY}&appid={API_KEY}&units=metric'
 
@@ -24,8 +24,8 @@ timestamp = datetime.now()
 
 conn = mysql.connector.connect(
     host='localhost',
-    user='veera',       # Vaihda MySQL-käyttäjä
-    password='riisimur', # Vaihda salasana
+    user='veera',       # Oma MySQL-käyttäjä
+    password='', # Oma salasana
     database='weather_db'
 )
 cursor = conn.cursor()
