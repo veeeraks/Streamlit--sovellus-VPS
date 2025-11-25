@@ -100,3 +100,63 @@ with tab1:
     )
 
     st.altair_chart(line_chart, use_container_width=True)
+
+# --- MAATIEDOT ---
+with tab2:
+    st.subheader("Maatiedot")
+    countries_conn = st.connection("mysql_countries", type="sql")
+    countries_df = countries_conn.query("SELECT * FROM countries LIMIT 10;", ttl=600)
+    st.dataframe(countries_df)
+
+    # Lipun värien donitsikaavio
+    colors_df = countries_conn.query("SELECT color FROM flag_colors;", ttl=600)
+    color_counts = colors_df['color'].value_counts().reset_index()
+    color_counts.columns = ['color', 'count']
+
+    color_map = {
+        'blue': '#0000FF',
+        'white': '#FFFFFF',
+        'red': '#FF0000',
+        'green': '#008000',
+        'yellow': '#FFFF00',
+        'black': '#000000',
+        'orange': '#FFA500'
+    }
+
+    chart = alt.Chart(color_counts).mark_arc(innerRadius=50).encode(
+        theta='count:Q',
+        color=alt.Color('color:N', scale=alt.Scale(domain=list(color_map.keys()), range=list(color_map.values()))),
+        tooltip=['color', 'count'],
+        stroke=alt.condition(
+            alt.datum.color == 'white',
+            alt.value('#D3D3D3'),
+            alt.value(None)
+        ),
+        strokeWidth=alt.condition(
+            alt.datum.color == 'white',
+            alt.value(2),
+            alt.value(0)
+        )
+    ).properties(
+        title='Maiden lippujen värien jakauma'
+    )
+
+    st.altair_chart(chart, use_container_width=True)
+
+
+# --- ETÄISYYS ---
+with tab3:
+    st.subheader("Tampereelta maailmalle")
+
+    # Näytetään nykyinen arvottu kaupunki ja etäisyys
+    st.write(f"Satunnainen kaupunki: **{st.session_state.random_city}**")
+    st.write(f"Etäisyys Tampereesta: **{st.session_state.distance:.2f} km**")
+
+    # Nappi uuden kaupungin arpomiseen
+    if st.button("🎲 Arvo uusi kaupunki"):
+        st.session_state.random_city = random.choice(cities)
+        tampere_coords = get_coords("Tampere")
+        city_coords = get_coords(st.session_state.random_city)
+        if tampere_coords and city_coords:
+            st.session_state.distance = haversine(*tampere_coords, *city_coords)
+        st.rerun()
